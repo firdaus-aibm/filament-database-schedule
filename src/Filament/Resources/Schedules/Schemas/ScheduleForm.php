@@ -33,7 +33,7 @@ class ScheduleForm
                         config('filament-database-schedule.commands.enable_custom') ?
                         static::$commands->pluck('full_name', 'name')->prepend(__('filament-database-schedule::schedule.messages.custom'), 'custom') : static::$commands->pluck('full_name', 'name')
                     )
-                    ->reactive()
+                    ->live()
                     ->searchable()
                     ->required()
                     ->afterStateUpdated(function ($set, $state) {
